@@ -1,0 +1,77 @@
+   .;;;;;;;;.   :;;;;;;          ,;;;;;;;.   :;;;;;;          .;  .::::::;  .:::::.  ;::::::::;
+   :        :   ::    ::         :;     ;:   ::    ::         ::  ::	    ::'          ::
+  ::        ::  ::     ::       ::       ::  ::     ::        ::  ::	    ::           ::
+  :::      :::  ::;;;;;.  ;:::; ::       ::  ::;;;;;.         ::  :::::.    ::           ::
+  ::    \\\ ::  ::      :       ::       ::  ::      :  :     ::  ::	    ::           ::
+   :     \\\:   ::     ::        :;     ;:   ::     ::  ::,,,,::  ::	    ::.          ::
+   `;;;;;;\\\   :;;;;;;;         `;;;;;;;'   :;;;;;;;   `:::::;'  `::::::;  `::::::;    ,::,
+	   \\\
+										Rebuild
+										Version 1.2
+			(C) Data Components Software Development
+
+What is QB Object?
+
+	QB Object is a library for QuickBASIC which puts the features of a GUI library into programming with ease of programming and coding. The library is made to look like the original QB Object library.
+
+What exactly "was" the "original" QB Object?
+
+	QB Object was the same, but it featured more objects and code. It was developed by Alexander Prado of AMP Software. The demo can be found on the web, but the library costs $50. The demo allows programs to be run with QB Object but not compiled with QB Object.
+
+What's new in version 1.1?
+
+	I've done the following to this library:
+		* ListBox control fixed (to work with multiple listboxes)
+		* More than one window can be added
+		* All controls use window IDs to display controls properly
+
+Why should I use this?
+
+	This library integrates GUI programming for use in other GUIs and Fake-OSes. The purpose is to ease programmers with simple GUI programming for use in other programs and software in QBasic involving graphical user interfaces.
+
+May I have a copy of the source code?
+
+	Surely. Unlike the original QB Object, this version is open source. I am not asking for payment, but to get the code, please e-mail me: todd@datacomponents.moved.in . Tell me you would like the code, and you may tell me what you are planning on using QB Object for, however THIS IS OPTIONAL. I'll then send you a copy of the code and enjoy.
+
+May we distribute the code of QB Object?
+
+	Well, I don't want it to be posted on a public website, but if you sent it to a couple people (who also agree by these rules), I don't see the harm in that.
+
+What do we do if we modified the code of QB Object?
+
+	If you made modifications, such as changes in the windowing system, the GUI library, or anything major in the code, you may distribute it, but please give it a different name from "QB Object". When distributing it, I'd like to ask that you please give us credit for our work.
+
+How long did it take you to write this library from scratch?
+
+	I think it took only a week or so, but it was of ALL the time combined.
+
+How do I use QB Object?
+
+	Please read "USAGE.TXT".
+
+I get an error with the library, what happened?
+
+	Try copying the "QB.BI" file into the directory and then reloading QB with the library and the new QB.BI file. The mouse routines require the modified version of QB.BI.
+
+How many objects am I allowed to create?
+
+	1 Window (MAX) and 50 of every object (MAX).
+
+What if I find an error?
+
+	Please tell me: todd@datacomponents.moved.in . Thank you.
+
+Credits:
+Todd Suess - Programmer of almost the entire library
+Jonathan Thorpe - Mouse Routines and Functions
+Alexander Prado - Programmer of the "original" QB Object
+Nicholas Voisin - Screen Capture/Display Routines
+Leonardo Pardini - BMP loading routines
+Douglas Lusher - GPrint Routine
+Microsoft - for the QuickBASIC programming language and environment
+
+<< A SPECIAL THANKS GOES TO Cha0s FOR HELPING AND TWEAKING THE CODE >>
+
+**Any questions, feel free to ask me at: todd@datacomponents.moved.in .
+
+(C) Data Components Software Development

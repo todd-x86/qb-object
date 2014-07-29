@@ -1,0 +1,211 @@
+   .;;;;;;;;.   :;;;;;;          ,;;;;;;;.   :;;;;;;          .;  .::::::;  .:::::.  ;::::::::;
+   :        :   ::    ::         :;     ;:   ::    ::         ::  ::	    ::'          ::
+  ::        ::  ::     ::       ::       ::  ::     ::        ::  ::	    ::           ::
+  :::      :::  ::;;;;;.  ;:::; ::       ::  ::;;;;;.         ::  :::::.    ::           ::
+  ::    \\\ ::  ::      :       ::       ::  ::      :  :     ::  ::	    ::           ::
+   :     \\\:   ::     ::        :;     ;:   ::     ::  ::,,,,::  ::	    ::.          ::
+   `;;;;;;\\\   :;;;;;;;         `;;;;;;;'   :;;;;;;;   `:::::;'  `::::::;  `::::::;    ,::,
+	   \\\				Usage Manual
+										Rebuild
+										Version 1.2
+			(C) Data Components Software Development
+
+To use QB Object, you must have QuickBASIC 4.5 running. Please run it with the "/L" switch and the QB Object library name after the switch. So, run QuickBASIC with this command: "QB /L QBOBJECT". Any other switches may be used as long as they don't conflict with the library.
+
+You then type in this line of code for use in the program:
+'$INCLUDE: 'QBOBJECT.BI'
+
+Then, there are functions for use in the program.
+
+********************* FUNCTIONS & SUBS *********************
+
+SUB win (x%, y%, x2%, y2%, title$, id%)
+	-This SUB creates a draggable window which will be the ONLY window and the MAIN window in the program.
+	>x% defines the first X coordinate
+	>y% defines the first Y coordinate
+	>x2% defines the second X coordinate
+	>y2% defines the second Y coordinate
+	>title$ defines the caption of the window
+	>id% defines the default ID given to the window
+
+SUB CloseWindow (id%)
+	-This SUB closes a window. (NOTE: THIS DOES NOT REDRAW ALL THE CONTROLS)
+	>id% defines the window ID to close
+
+SUB button (caption$, x%, y%, id%)
+	-This SUB creates a clickable button in the window of the program.
+	>caption$ defines the caption of the button
+	>x% defines the X coordinate of the button (starting at the window's X)
+	>y% defines the Y coordinate of the button (starting at the window's Y)
+	>id% defines the ID of the button
+
+FUNCTION Button.Cont% (id%)
+	-This function returns whether the button was clicked recently by checking its ID.
+	>id% defines the ID of the button to check
+
+SUB TextBox (caption$, x%, y%, widinchar%, id%)
+	-This SUB creates an editable textbox in the window of the program.
+	>caption$ defines the text already in the textbox
+	>x% defines the X coordinate of the textbox
+	>y% defines the Y coordinate of the textbox
+	>widinchar% defines the width of the textbox by a number for how many characters wide it will be
+	>id% defines the ID of the textbox
+
+FUNCTION TextBox.Cont$ (id%)
+	-This function returns the text in the textbox with a certain ID.
+	>id% defines the ID of the textbox to check for text
+
+SUB TextBox.SetText (id%, text$)
+	-This SUB changes a textbox's text. (NOTE: THIS DOESN'T REDRAW THE CONTROLS)
+	>id% defines the ID of the textbox to set text
+	>text$ defines the text to change the textbox with
+
+SUB ValueBox (x%, y%, min%, max%, id%)
+	-This SUB defines a valuebox with an integer value.
+	>x% defines the X coordinate of the valuebox
+	>y% defines the Y coordinate of the valuebox
+	>min% defines the minimal value of the valuebox
+	>max% defines the maximum value of the valuebox
+	>id% defines the ID of the valuebox
+
+FUNCTION ValueBox.Cont% (id%)
+	-This function returns the value of a valuebox with a certain ID.
+	>id% defines the ID of the valuebox to check
+
+SUB CheckBox (x%, y%, checked%, id%)
+	-This SUB creates a checkbox in the window of the program.
+	>x% defines the X coordinate of the checkbox
+	>y% defines the Y coordinate of the checkbox
+	>checked% defines whether or not the checkbox is checked (0 = Unchecked, 1 = Checked)
+	>id% defines the ID of the checkbox
+
+FUNCTION Check.Cont% (id%)
+	-This function returns whether a checkbox with a certain ID is checked or not.
+	>id% defines the ID of the checkbox to return its value
+
+SUB OptionCirc (x%, y%, checked%, group%, id%)
+	-This SUB creates a radiobutton in the window of the program.
+	>x% defines the X coordinate of the radiobutton
+	>y% defines the Y coordinate of the radiobutton
+	>checked% defines whether or not the radiobutton is checked (0 = Unchecked, 1 = Checked)
+		>NOTE: ALL RADIOBUTTONS OF group% WILL BE UNSELECTED EXCEPT FOR THE MOST RECENTLY SELECTED
+	>group% defines the group to which the radiobuttons belong
+	>id% defines the ID of the radiobutton
+
+FUNCTION Option.Cont% (id%)
+	-This function returns whether or not a radiobutton with a certain ID is checked or not.
+	>id% defines the ID of the radiobutton to return its value
+
+SUB Icon (x%, y%, filename$, disablecol%, id%)
+	-This SUB creates an area for loading an icon (32x32x16) in the window of the program.
+	>x% defines the X coordinate of the icon
+	>y% defines the Y coordinate of the icon
+	>filename$ defines the file to load in the icon area
+	>disablecol% defines the color in the icon to suppress from displaying
+	>id% defines the ID of the icon
+
+SUB Bitmap (x%, y%, file$, id%)
+	-This SUB defines an area to load a bitmap (16-colors) in the window of the program.
+	>x% defines the X coordinate of the bitmap
+	>y% defines the Y coordinate of the bitmap
+	>file$ defines the file to load in the bitmap area
+	>id% defines the ID of the bitmap
+
+SUB Label (x%, y%, text$, c%, id%)
+	-This SUB places a label on the window of the program.
+	>x% defines the X coordinate of the label
+	>y% defines the Y coordinate of the label
+	>text$ defines the label's text
+	>c% defines the color of the label
+	>id% defines the ID of the label
+
+SUB ListBox (x%, y%, x2%, lines%, max%, array$(), id%)
+	-This SUB creates a listbox in the window of the program and items for the listbox using an array.
+	>x% defines the X coordinate of the listbox
+	>y% defines the Y coordinate of the listbox
+	>x2% defines the second X coordinate of the listbox
+	>lines% defines how many lines should be shown in the listbox (e.g. 5-7)
+	>max% defines the maximum number of items in the listbox (MUST ALSO BE THE ARRAY'S LIMIT TOO)
+	>array$() defines the array to use to store the items for the listbox (MUST ALSO BE IN LIMITS WITH max%)
+	>id% defines the ID of the listbox
+
+FUNCTION ListBox.Cont% (id%)
+	-This function returns the selected item in the listbox with a certain ID.
+	>id% defines the ID of the listbox to check
+
+FUNCTION ListBox.Item$ (id%)
+	-This function returns the text of the item selected in the listbox with a certain ID.
+	>id% defines the ID of the listbox to check
+
+SUB ListBox.AddItem (lstboxid%, item$, arrayid%)
+	-This SUB adds an item to a listbox at a certain index.
+	>lstboxid% defines the listbox ID to use for usage
+	>item$ defines the item to be added
+	>arrayid% defines the item index ID in the listbox's item array
+
+SUB ListBox.DelItem (lstboxid%, arrayid%)
+	-This SUB deletes an item from a listbox using the item's index ID.
+	>lstboxid% defines the listbox ID to use for usage
+	>arrayid% defines the item index ID in the listbox's item array
+
+FUNCTION ListBox.ItemFromArray$ (lstboxid%, arrayid%)
+	-This function retrieves an item from a listbox's array using its array ID.
+	>lstboxid% defines the listbox ID to use for defining which array to use
+	>arrayid% defines the item's position in the array
+
+SUB GetControl ()
+	-This SUB MUST BE USED in every program using QB Object. This brings the functionality into the program to make the controls work.
+	>NOTE: USE THIS IN A DO-LOOP METHOD
+
+SUB RedrawControls ()
+	-This SUB redraws all the controls on the active window.
+
+SUB MouseHide ()
+	-This SUB hides the mouse cursor.
+
+SUB MouseShow ()
+	-This SUB shows the mouse cursor.
+
+SUB MouseStatus (lb%, rb%, xMouse%, yMouse%)
+	-This SUB returns the status of the mouse.
+	>NOTE: ALL ARGUMENTS IN THIS SUB MUST BE VARIABLES, NOT VALUES!
+	>lb% is the value of the leftbutton on the mouse (0 = Unpressed, -1 = Pressed)
+	>rb% is the value of the rightbutton on the mouse (0 = Unpressed, -1 = Pressed)
+	>xMouse% returns the X coordinate of the mouse cursor
+	>yMouse% returns the Y coordinate of the mouse cursor
+
+FUNCTION MouseLimit% (MiniX%, MiniY%, MaxiX%, MaxiY%)
+	-This function returns whether or not the cursor is in a specified area (0 = False, -1 = True).
+	>MiniX% defines the X coordinate of the area
+	>MiniY% defines the Y coordinate of the area
+	>MaxiX% defines the width of the area
+	>MaxiY% defines the height of the area
+
+SUB QB.box (x%, y%, x2%, y2%, colr%, filled%, id%)
+	-This SUB draws a box in the window most active.
+	>x% defines the X starting coordinate for the box
+	>y% defines the Y starting coordinate for the box
+	>x2% defines the second X coordinate for the box
+	>y2% defines the second Y coordinate for the box
+	>colr% defines the color of the box (outline/filling)
+	>filled% defines whether the box is filled or not (0 = Empty, 1 = Filled)
+	>id% defines the ID of the box
+
+SUB QB.circle (x%, y%, rad%, colr%, startd%, endd%, id%)
+	-This SUB draws a circle in the window most active.
+	>x% defines the X coordinate for the circle
+	>y% defines the Y coordinate for the circle
+	>rad% defines the radius of the circle
+	>colr% defines the color of the circle
+	>startd% defines the starting degree of the filling of the circle (0 = no filling)
+	>endd% defines the ending degree of the filling of the circle (0 = no filling)
+	>id% defines the ID of the circle
+
+SUB QB.line (x%, y%, x2%, y2%, colr%, id%)
+	-This SUB draws a line in the window most active.
+	>x% defines the X starting coordinate for the line
+	>y% defines the Y starting coordinate for the line
+	>x2% defines the second X coordinate for the line
+	>y2% defines the second Y coordinate for the line
+	>colr% defines the color of the line
+	>id% defines the ID of the line
